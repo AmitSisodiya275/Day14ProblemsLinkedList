@@ -22,8 +22,9 @@ public class MyLinkedList {
 		}
 	}
 	
-	public void printLinkedList() {
-		
+	public void insertInTheMiddle(INode newNode) {
+		this.head.setNext(newNode);
+		newNode.setNext(tail);
 	}
 	
 	

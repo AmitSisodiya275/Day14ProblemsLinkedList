@@ -13,8 +13,9 @@ public class MyLinkedLIstTest {
 		
 		MyLinkedList linkedList = new MyLinkedList();
 		linkedList.add(myFirstNode);
-		linkedList.add(mySecondNode);
 		linkedList.add(myThirdNOde);
+		linkedList.insertInTheMiddle(mySecondNode);
+		
 		
 		Boolean result = linkedList.head.equals(myFirstNode) && 
 						 linkedList.head.getNext().equals(mySecondNode) && 
