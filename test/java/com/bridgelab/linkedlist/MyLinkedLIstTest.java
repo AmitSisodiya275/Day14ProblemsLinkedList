@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MyLinkedLIstTest {
 
 	@Test
-	public void whenAddedToTheLinkedListShouldPassLinkedListTest() {
+	public void whenCalledPopMethodShouldRemoveHead() {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
 		MyNode<Integer> myThirdNOde = new MyNode<>(70);
@@ -15,11 +15,12 @@ public class MyLinkedLIstTest {
 		linkedList.add(myFirstNode);
 		linkedList.add(myThirdNOde);
 		linkedList.insertInTheMiddle(mySecondNode);
+		linkedList.printLinkedList();
+		linkedList.pop();
+		linkedList.printLinkedList();
 		
-		
-		Boolean result = linkedList.head.equals(myFirstNode) && 
-						 linkedList.head.getNext().equals(mySecondNode) && 
-						 linkedList.tail.equals(myThirdNOde);
+		Boolean result = linkedList.head.equals(mySecondNode) && 
+						 linkedList.head.getNext().equals(linkedList.tail);
 		
 		Assert.assertTrue(result);
 	}

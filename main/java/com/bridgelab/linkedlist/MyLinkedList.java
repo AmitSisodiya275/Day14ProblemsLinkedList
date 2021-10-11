@@ -27,5 +27,23 @@ public class MyLinkedList {
 		newNode.setNext(tail);
 	}
 	
+	public void pop() {
+		this.head = this.head.getNext();
+	}
+	
+	public void printLinkedList() {
+		StringBuffer myNodes = new StringBuffer("My Nodes : ");
+		INode tempNode = head;
+		while(tempNode.getNext() != null) {
+			myNodes.append(tempNode.getKey());
+			if(!tempNode.equals(null)) {
+			myNodes.append("->");
+			tempNode = tempNode.getNext();
+			}
+		}
+		myNodes.append(tempNode.getKey());
+		System.out.println(myNodes);
+	}
+	
 	
 }
