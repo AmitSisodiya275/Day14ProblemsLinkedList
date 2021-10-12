@@ -4,7 +4,10 @@ public class MyNode<t> implements INode<t> {
 
 	private t key;
 	private INode next;
-
+	
+	public MyNode() {
+		
+	}
 	public MyNode(t key) {
 		this.key = key;
 		this.next = null;
