@@ -2,8 +2,8 @@ package com.bridgelab.linkedlist;
 
 public class MyLinkedList {
 
-	INode head;
-	INode tail;
+	public INode head;
+	public INode tail;
 
 	public MyLinkedList() {
 		this.head = null;
