@@ -15,17 +15,36 @@ public class MyStackTest {
 		
 		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThirdNOde = new MyNode<>(56);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
 		
 		myStack.push(myFirstNode);
 		myStack.push(mySecondNode);
-		myStack.push(myThirdNOde);
+		myStack.push(myThirdNode);
 		
 		myStack.printStack();
 		
 		INode peak = myStack.peak();
 		
-		assertEquals(myThirdNOde, peak);
+		assertEquals(myThirdNode, peak);
+	}
+	
+	@Test
+	public void added3NodeWhenPopShouldRemoveHead() {
+		MyStack myStack = new MyStack();
+		
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
+		
+		myStack.push(myFirstNode);
+		myStack.push(mySecondNode);
+		myStack.push(myThirdNode);
+		
+		INode pop = myStack.pop();
+		
+		myStack.printStack();
+		
+		assertEquals(myThirdNode, pop);
 	}
 	
 }
