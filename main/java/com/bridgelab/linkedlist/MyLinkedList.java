@@ -18,8 +18,8 @@ public class MyLinkedList {
 			this.tail = newNode;
 		} else {
 			INode tempNode = this.tail;
+			this.tail.setNext(newNode);
 			this.tail = newNode;
-			this.head.setNext(tempNode);
 		}
 	}
 
@@ -69,5 +69,16 @@ public class MyLinkedList {
 			}
 			tempNode = tempNode.getNext();
 		}
+	}
+	
+	public <t>INode search(t value) {
+		INode tempNode = this.head;
+		while (tempNode.getNext() != null) {
+			if(tempNode.getKey().equals(value)) {
+				return tempNode;
+			}
+		}
+		tempNode = tempNode.getNext();
+		return null;
 	}
 }

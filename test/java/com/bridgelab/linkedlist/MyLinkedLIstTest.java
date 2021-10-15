@@ -1,5 +1,7 @@
 package com.bridgelab.linkedlist;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -43,15 +45,17 @@ public class MyLinkedLIstTest {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
 		MyNode<Integer> myThirdNOde = new MyNode<>(70);
+		MyNode<Integer> myFourthNode = new MyNode<>(90);
 		
 		MyLinkedList linkedList = new MyLinkedList();
 		linkedList.append(myFirstNode);
 		linkedList.append(mySecondNode);
 		linkedList.append(myThirdNOde);
+		linkedList.append(myFourthNode);
 		
 		Boolean result = linkedList.head.equals(myFirstNode) &&
 						 linkedList.head.getNext().equals(mySecondNode) &&
-						 linkedList.tail.equals(myThirdNOde);
+						 linkedList.tail.equals(myFourthNode);
 		
 		Assert.assertTrue(result);
 	}
@@ -115,5 +119,21 @@ public class MyLinkedLIstTest {
 						 linkedList.tail.equals(mySecondNode);
 		
 		Assert.assertTrue(result);
+	}
+	
+	@Test 
+	public void whenCalledSearchMethodShouldReturnSearchedValue() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNOde = new MyNode<>(70);
+		
+		MyLinkedList linkedList = new MyLinkedList();
+		linkedList.add(myFirstNode);
+		linkedList.add(mySecondNode);
+		linkedList.add(myThirdNOde);
+		
+		INode searchedNode = linkedList.search(30);
+		
+		assertEquals(mySecondNode, searchedNode);
 	}
 }
